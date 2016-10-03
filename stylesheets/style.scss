@@ -1,0 +1,147 @@
+$link: rgba(150,150,150,.75);
+//$link-active: rgba(75,75,75,.75);
+$link-active: rgba(116,190,251,.75);
+$blue: #74BEFB;
+
+html, body{
+    height: 100%;
+    position: relative;
+}
+
+h4{
+    margin: 0;
+}
+
+hr{
+    background-color: $blue;
+}
+
+#navigation{
+    border-bottom: 1px solid aqua; 
+}
+
+.navbar{
+    width: auto;
+}
+
+.navbar-light{
+    .navbar-brand{
+        color: $blue;
+        margin: 0 20px;
+        font-weight: bold;
+    }
+}
+
+.nav-link{
+    padding: 10px 20px;
+}
+
+#main-content{
+    margin-top: 54px; 
+}
+
+.section-content{
+    display: flex;
+    align-items: center;
+    padding: 100px 0;
+    text-align: center;
+    height: auto;
+}
+
+.bg-gray{
+    background-color: lightgray;
+}
+
+.group{
+    margin-bottom: 30px;
+}
+
+#hexagon {
+    display: inline-block;
+	width: 100px;
+	height: 55px;
+	background: $link;
+	position: relative;
+    margin: 0 2px;
+    line-height: 55px;
+    transition: background 1s;
+    
+    &:hover{
+        background: $link-active;
+    }
+    
+    a{
+        display: block;
+        height: 100%;
+        color: white;
+        text-decoration: none;
+    }
+}
+#hexagon:before {
+	content: "";
+	position: absolute;
+	top: -25px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 25px solid $link;
+    transition: border-bottom 1s;
+}
+
+#hexagon:hover::before{
+   border-bottom: 25px solid $link-active; 
+}
+
+#hexagon:after {
+	content: "";
+	position: absolute;
+	bottom: -25px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 25px solid $link;
+    transition: border-top 1s;
+}
+
+#hexagon:hover::after{
+   border-top: 25px solid $link-active; 
+}
+
+@media (min-width: 768px){
+    
+    .group{
+        margin-bottom: 60px;
+    }
+    
+    #hexagon {
+        width: 200px;
+        height: 110px;
+        line-height: 110px;
+    }
+    #hexagon:before {
+        top: -50px;
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+        border-bottom: 50px solid $link;
+    }
+
+    #hexagon:hover::before{
+       border-bottom: 50px solid $link-active; 
+    }
+
+    #hexagon:after {
+        bottom: -50px;
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+        border-top: 50px solid $link;
+    }
+
+    #hexagon:hover::after{
+       border-top: 50px solid $link-active; 
+    }
+    
+}
